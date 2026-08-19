@@ -15,6 +15,7 @@
 - **控制面开发**：Kubebuilder / controller-runtime，11 个 CRD、7 个 Controller 的完整设计与实现
 - **系统仿真**：离散事件引擎模拟 AI 推理负载，1x~20x 动态倍速，时间段切面（起点/终点全局状态 + 区间指标与 Trace）
 - **可观测性**：Prometheus / OpenTelemetry / Jaeger / Grafana 全链路，告警规则实测验证，历史数据 PVC 持久化
+- **故障排查**：从偶发环境故障到上游缺陷定位的完整方法论——探针复现、健康对照、源码指纹、官方互动，全证据链沉淀为可复现研究仓库
 - **工程治理**：CI 全链路门禁、文档按读者分层、变更全归档，让项目可交接、可长期维护
 
 ---
@@ -51,6 +52,21 @@
 | 数据 | PostgreSQL 持久化历史快照，Prometheus / Jaeger PVC 不丢历史 |
 | 部署 | Docker Desktop 一键部署，CI 含单测 / lint / 文档门禁 / E2E |
 | 文档 | 人类 / 本地 Agent / 远程 AI 三层独立维护，变更全归档 |
+
+### [wsl-loopback-stall](https://github.com/3900563672/wsl-loopback-stall)
+
+WSL2（Consomme 网络模式）下 **IPv4 回环 + 临时端口 churn 引发的连接停滞**：从"偶发环境问题"到"上游缺陷区间定位"的完整研究链——确定性复现、剂量响应机制、DLL 指纹锚定、源码级修复确认，并已与上游官方互动（issue #41286 跟进评论 + 正式报告 #41383）。
+
+[![Docs](https://github.com/3900563672/wsl-loopback-stall/actions/workflows/docs.yml/badge.svg)](https://github.com/3900563672/wsl-loopback-stall/actions/workflows/docs.yml)
+[![License](https://img.shields.io/github/license/3900563672/wsl-loopback-stall)](https://github.com/3900563672/wsl-loopback-stall/blob/main/LICENSE)
+
+| 维度 | 内容 |
+| --- | --- |
+| 复现 | 探针驱动确定性复现（2.7.8.0 / 2.9.4.0 复现，固定端口免疫，Docker 排除） |
+| 机制 | 剂量响应定量模型（约 10.4ms/bind 固定开销、96 bind/s 恒定吞吐） |
+| 证据 | DLL 字符串指纹全命中（tcp 27/27、udp 7/7）+ 源码级修复确认（2.9.5+） |
+| 官方 | 上游 issue #41286 跟进评论 + 正式报告 #41383（官方日志包已交付、机器人放行） |
+| 文档 | 39 篇编号文档全链路归档，markdownlint / 链接检查门禁 |
 
 ### [AI-JSON-Repair-Tool](https://github.com/3900563672/AI-JSON-Repair-Tool)
 
