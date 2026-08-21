@@ -2,7 +2,7 @@
   <p>
     <img src="https://readme-typing-svg.demolab.com/?lines=Hi%2C+I%27m+hh+%F0%9F%91%8B;Building+Kubernetes+%26+AI+Infrastructure&font=Fira+Code&weight=600&size=26&duration=2200&pause=500&color=24292F&center=true&vCenter=true&width=480&height=40" alt="Typing SVG" />
   </p>
-  <sub>Kubernetes · Go · AI 推理调度与仿真 · Cloud Native &amp; Observability</sub>
+  <sub>Kubernetes · Go · AI 推理调度与仿真 · AI×Human Collaboration · Cloud Native &amp; Observability</sub>
 </div>
 
 ---
@@ -10,6 +10,8 @@
 ## 关于我
 
 专注 **Kubernetes 控制面工程**：把调度策略写成可运行、可观测、可验证的系统。完整实现过从 CRD 设计、Controller 开发、模拟器引擎到可观测性与前端闭环的端到端项目，并沉淀了一套可复用的工程方法。
+
+同时，我也在系统性地研究 **AI 与人类在高复杂度工程中的协作**：不是把 AI 当代码生成器，而是当协作者——研究如何让它可交接、可追溯、可验证，并把实践沉淀为可复用的方法。
 
 **核心能力**
 - **控制面开发**：Kubebuilder / controller-runtime，11 个 CRD、7 个 Controller 的完整设计与实现
@@ -74,25 +76,36 @@ WSL2（Consomme 网络模式）下 **IPv4 回环 + 临时端口 churn 引发的�
 
 ---
 
+## 🔬 AI × Human 协作研究
+
+我在研究一个具体问题：**AI 如何参与高复杂度、长周期的工程而不失控**。不是把 AI 当代码生成器，而是当协作者——研究它的交接、追溯、验证与边界。
+
+**研究问题**
+- 如何让 AI 的产出可交接、可追溯、可回滚？
+- 单人 + AI 协作能达到什么工程规范上限？
+- AI 参与上游开源时，披露与信任边界在哪？
+
+**我的实践**
+- **文档按读者分层**：人类 / 本地 Agent / 远程 AI 独立入口，互不串读
+- **变更全归档**：change-history 记录"为什么改、怎么改、怎么回滚"
+- **CI 强制同步**：源码变更必须同步文档，漂移被门禁拦截
+- **提示词协议化**：任务五要素、默认假设、交接模板，任何 AI 接手即对齐
+
+**实验场**
+- hello-k8s-ai：单人 + AI 达到团队级工程规范的全流程实验
+- Kueue 上游：AI 辅助的真实开源贡献，全程透明 AI 披露
+- WSL 上游缺陷研究：AI 辅助从复现到源码级确认的完整证据链
+
+这套体系欢迎讨论：AI 协作的边界、规范、未来形态，我都感兴趣。
+
+---
+
 ## 🤝 开源协作
 
 - 项目欢迎 **Issue / PR / 讨论**：新想法、bug 报告、设计建议都欢迎
 - 贡献指南：[CONTRIBUTING.md](https://github.com/3900563672/hello-k8s-ai/blob/main/CONTRIBUTING.md)
 - 从 [good first issue](https://github.com/3900563672/hello-k8s-ai/labels/good%20first%20issue) 开始
 - 安全漏洞：通过 [SECURITY.md](https://github.com/3900563672/hello-k8s-ai/blob/main/SECURITY.md) 私密报告
-
-## 🧠 AI 协作工程化（我的独特方法）
-
-深度使用 AI 协作开发，并为此建立了**可复用的工程化体系**——不是"用 AI 写代码"，而是让 AI 像工程师一样可交接、可追溯：
-
-- **文档按读者分层**：人类 / 本地 Agent / 远程 AI 各自独立入口，互不串读、互不污染
-- **变更全归档**：change-history 记录"为什么改、怎么改、怎么回滚"，历史可复盘
-- **CI 强制同步**：改源码必须同步映射文档，文档漂移被机械门禁拦截
-- **提示词协议化**：任务五要素、默认假设、交接模板，任何 AI 接手都能对齐上下文
-
-这套方法让单人项目具备了团队级工程规范，也让我能与不同 AI 工具高效协作。
-
----
 
 ## 🛠️ Tech Stack
 
