@@ -57,7 +57,7 @@
 
 ### [wsl-loopback-stall](https://github.com/3900563672/wsl-loopback-stall)
 
-WSL2（Consomme 网络模式）下 **IPv4 回环 + 临时端口 churn 引发的连接停滞**：从"偶发环境问题"到"上游缺陷区间定位"的完整研究链——确定性复现、剂量响应机制、DLL 指纹锚定、源码级修复确认，并已与上游官方互动（issue #41286 跟进评论 + 正式报告 #41383）。
+WSL2（Consomme 网络模式）下 **IPv4 回环 + 临时端口 churn 引发的连接停滞**：从"偶发环境问题"到"上游缺陷区间定位"的完整研究链——确定性复现、剂量响应机制、DLL 指纹锚定、源码级修复确认，并已与上游官方互动（[issue #41286](https://github.com/microsoft/WSL/issues/41286) 跟进评论 + [正式报告 #41383](https://github.com/microsoft/WSL/issues/41383)）。
 
 [![Docs](https://github.com/3900563672/wsl-loopback-stall/actions/workflows/docs.yml/badge.svg)](https://github.com/3900563672/wsl-loopback-stall/actions/workflows/docs.yml)
 [![License](https://img.shields.io/github/license/3900563672/wsl-loopback-stall)](https://github.com/3900563672/wsl-loopback-stall/blob/main/LICENSE)
@@ -67,12 +67,20 @@ WSL2（Consomme 网络模式）下 **IPv4 回环 + 临时端口 churn 引发的�
 | 复现 | 探针驱动确定性复现（2.7.8.0 / 2.9.4.0 复现，固定端口免疫，Docker 排除） |
 | 机制 | 剂量响应定量模型（约 10.4ms/bind 固定开销、96 bind/s 恒定吞吐） |
 | 证据 | DLL 字符串指纹全命中（tcp 27/27、udp 7/7）+ 源码级修复确认（2.9.5+） |
-| 官方 | 上游 issue #41286 跟进评论 + 正式报告 #41383（官方日志包已交付、机器人放行） |
+| 官方 | 上游 [issue #41286](https://github.com/microsoft/WSL/issues/41286) 跟进评论 + [正式报告 #41383](https://github.com/microsoft/WSL/issues/41383)（官方日志包已交付、机器人放行） |
 | 文档 | 39 篇编号文档全链路归档，markdownlint / 链接检查门禁 |
 
 ### [AI-JSON-Repair-Tool](https://github.com/3900563672/AI-JSON-Repair-Tool)
 
 按配置规则实时修复 / 转换 JSON API 响应的代理服务（Go + Gin）。
+
+---
+
+### [kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue)（上游贡献中）
+
+Kubernetes 原生作业排队系统，我的主战场：**TAS（拓扑感知调度）方向**。当前首个 PR（FairSharing 文档一致性）已提交等待合入，并已认领 TAS 调度优化与测试补全任务。
+
+- 透明 AI 披露：所有上游评论 / PR 均标注 AI 协作
 
 ---
 
@@ -102,6 +110,7 @@ WSL2（Consomme 网络模式）下 **IPv4 回环 + 临时端口 churn 引发的�
 
 ## 🤝 开源协作
 
+- 上游贡献中：[kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue)（TAS 拓扑感知调度方向，PR 与评论均透明 AI 披露）
 - 项目欢迎 **Issue / PR / 讨论**：新想法、bug 报告、设计建议都欢迎
 - 贡献指南：[CONTRIBUTING.md](https://github.com/3900563672/hello-k8s-ai/blob/main/CONTRIBUTING.md)
 - 从 [good first issue](https://github.com/3900563672/hello-k8s-ai/labels/good%20first%20issue) 开始
